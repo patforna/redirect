@@ -20,6 +20,12 @@ get '/' do
   erb :index
 end
 
+get '/clear' do
+  settings.db.remove
+  redirect to '/'
+end
+
+
 get '/redirect' do
   target = params[:target]
   data = { :timestamp => Time.now.getutc, :target => target}
