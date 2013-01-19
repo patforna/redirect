@@ -25,7 +25,7 @@ body {
 	line-height: 1.4em;
 	background: #eaeaea url('/images/bg.png');
 	color: #4d4d4d;
-	width: 550px;
+	width: 90%;
 	margin: 0 auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
@@ -157,7 +157,8 @@ body {
 
 #todo-list li {
 	position: relative;
-	font-size: 24px;
+    font-family: Menlo, Monaco, sans-serif;	
+	font-size: 14px;
 	border-bottom: 1px dotted #ccc;
 }
 
