@@ -3,44 +3,26 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Spike: Sinatra, MongoDB and HTML5</title>
+	<title>Redirects</title>
 	<link rel="stylesheet" href="/css/base.css">
 </head>
 <body>
 	<section id="todoapp">
 		<header id="header">
-			<h1>todo</h1>
-			<input id="new-todo" name="text" placeholder="What needs to be done?" autofocus>
+			<h1>Redirects</h1>
 		</header>
 		<section id="main">
 			<ul id="todo-list">
-				<% @todos.each do |todo| %>
-					<li id="<%= todo['_id'] %>" <%= 'class="completed"' if todo['done'] %>>
+				<% @redirects.each do |redirect| %>
+					<li>
 						<div class="view">
-							<input class="toggle" type="checkbox" <%= 'checked' if todo['done'] %>>
-							<label><%= todo['text']%></label>
-							<button class="destroy"></button>
+						  <span class="timestamp"><%= redirect['timestamp'] %> =&gt;</span>
+						  <span class="target"><%= redirect['target'] %></span>
 						</div>
 					</li>
 				<% end %>
 			</ul>
 		</section>
-		<footer id="footer">
-			<span id="todo-count"><strong><%= @todos.length %></strong> items left</span>
-			<ul id="filters">
-				<li>
-					<a class="selected" href="#/">All</a>
-				</li>
-				<li>
-					<a href="#/completed">Completed</a>
-				</li>
-			</ul>
-		</footer>
 	</section>
-	<footer id="info">
-		<p>Spiking Sinatra, MongoDB and HTML5</p>
-	</footer>
-	<script src="/js/lib/jquery-1.8.2.min.js"></script>
-	<script src="/js/main.js"></script>	
 </body>
 </html>
